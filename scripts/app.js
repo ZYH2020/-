@@ -1,6 +1,5 @@
-var yike=angular.module('yike',[]);
+var yike=angular.module('yike',['ctrls','ngRoute']);
 yike.run(['$rootScope',function($rootScope){
-	// console.log($rootScope);
 	$rootScope.toggle=function(e){
 		event.preventDefault();
 		event.stopPropagation();
@@ -26,4 +25,18 @@ yike.run(['$rootScope',function($rootScope){
 			}
 		}
 	}
+}]);
+
+yike.config(['$locationProvider',function($locationProvider){
+  	$locationProvider.hashPrefix("");
+}]);
+
+//配置路由
+yike.config(['$routeProvider',function($routeProvider){
+	$routeProvider.when('/',{
+		redirectTo:'/index'
+	}).when('/index',{
+		templateUrl:'views/test.html',
+		controller:'index'
+	})
 }]);

@@ -1,0 +1,23 @@
+angular.module('ctrls',[])
+.controller('navs',['$scope',function($scope){
+	$scope.navs=[
+		{link:'#/index',icon:'icon-home',text:'今日一刻'},
+		{link:'#/older',icon:'icon-file-empty',text:'王琪内容'},
+		{link:'#/author',icon:'icon-pencil',text:'热门作者'},
+		{link:'#/category',icon:'icon-menu',text:'栏目浏览'},
+		{link:'#/favourite',icon:'icon-heart',text:'我的喜欢'},
+		{link:'#/settings',icon:'icon-cog',text:'设置'},
+	];
+}])
+.controller('index',['$scope','$rootScope',function($scope,$rootScope){
+	$scope.msg='我是控制器获取的数据!';
+	$rootScope.num=0;
+}])
+.controller('older',['$scope','$rootScope',function($scope,$rootScope){
+	$scope.msg='我是控制器获取的数据!';
+	$rootScope.num=1;
+}])
+.controller('author',['$scope','$rootScope',function($scope,$rootScope){
+	$scope.msg='我是控制器获取的数据!';
+	$rootScope.num=2;
+}])
